@@ -4,6 +4,7 @@ import guru.springframework.controllers.ConstructorInjectedController;
 import guru.springframework.controllers.GetterInjectedController;
 import guru.springframework.controllers.MyController;
 import guru.springframework.controllers.PropertyInjectedController;
+import guru.springframework.examplebeans.FakeDataSource;
 import guru.springframework.services.GreetingService;
 import guru.springframework.services.GreetingServiceFactory;
 import org.springframework.boot.SpringApplication;
@@ -26,5 +27,13 @@ public class DiDemoApplication {
 //		System.out.println(ctx.getBean(PropertyInjectedController.class).sayHello());
 //		System.out.println(ctx.getBean(GetterInjectedController.class).sayHello());
 //		System.out.println(ctx.getBean(ConstructorInjectedController.class).sayHello());
-	}
+
+        FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
+        System.out.println(fakeDataSource.getUser());
+        System.out.println(fakeDataSource.getPassword());
+        System.out.println(fakeDataSource.getUrl());
+
+
+
+    }
 }
