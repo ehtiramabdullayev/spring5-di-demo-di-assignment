@@ -15,11 +15,11 @@ import org.springframework.core.env.Environment;
  * @project di-demo
  */
 @Configuration
-@PropertySource({"classpath:dataSource.properties","classpath:jms.properties"})
+//@PropertySource({"classpath:dataSource.properties","classpath:jms.properties"})
 public class PropertyConfig {
-
-    @Autowired
-    Environment environment;
+//
+//    @Autowired
+//    Environment environment;
 
     @Value("${demo.username}")
     String user;
@@ -43,8 +43,8 @@ public class PropertyConfig {
     @Bean
     public FakeDataSource fakeDataSource(){
         FakeDataSource fakeDataSource = new FakeDataSource();
-//        fakeDataSource.setUser(user);
-        fakeDataSource.setUser(environment.getProperty("demo.username"));
+        fakeDataSource.setUser(user);
+//        fakeDataSource.setUser(environment.getProperty("demo.username"));
         fakeDataSource.setPassword(password);
         fakeDataSource.setUrl(url);
 
@@ -61,10 +61,10 @@ public class PropertyConfig {
     }
 
 
-
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer properties(){
-        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
-        return propertySourcesPlaceholderConfigurer;
-    }
+//
+//    @Bean
+//    public static PropertySourcesPlaceholderConfigurer properties(){
+//        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
+//        return propertySourcesPlaceholderConfigurer;
+//    }
 }
