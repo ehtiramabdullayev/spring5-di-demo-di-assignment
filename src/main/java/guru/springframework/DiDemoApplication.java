@@ -5,6 +5,7 @@ import guru.springframework.controllers.GetterInjectedController;
 import guru.springframework.controllers.MyController;
 import guru.springframework.controllers.PropertyInjectedController;
 import guru.springframework.examplebeans.FakeDataSource;
+import guru.springframework.examplebeans.FakeJmsBroker;
 import guru.springframework.services.GreetingService;
 import guru.springframework.services.GreetingServiceFactory;
 import org.springframework.boot.SpringApplication;
@@ -33,6 +34,10 @@ public class DiDemoApplication {
         System.out.println(fakeDataSource.getPassword());
         System.out.println(fakeDataSource.getUrl());
 
+        FakeJmsBroker fakeJmsBroker = (FakeJmsBroker) ctx.getBean(FakeJmsBroker.class);
+        System.out.println(fakeJmsBroker.getUser());
+        System.out.println(fakeJmsBroker.getPassword());
+        System.out.println(fakeJmsBroker.getUrl());
 
 
     }
