@@ -1,0 +1,5 @@
+jms:
+    username: Jms username
+    password: Jmsov
+    url: JsmUrl
+

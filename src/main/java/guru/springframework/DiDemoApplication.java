@@ -6,6 +6,9 @@ import guru.springframework.controllers.MyController;
 import guru.springframework.controllers.PropertyInjectedController;
 import guru.springframework.examplebeans.FakeDataSource;
 import guru.springframework.examplebeans.FakeJmsBroker;
+import guru.springframework.patterns.Factory;
+import guru.springframework.patterns.ProductA;
+import guru.springframework.patterns.ProductB;
 import guru.springframework.services.GreetingService;
 import guru.springframework.services.GreetingServiceFactory;
 import org.springframework.boot.SpringApplication;
@@ -38,6 +41,8 @@ public class DiDemoApplication {
         System.out.println(fakeJmsBroker.getUser());
         System.out.println(fakeJmsBroker.getPassword());
         System.out.println(fakeJmsBroker.getUrl());
+
+
 
 
     }
